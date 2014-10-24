@@ -1,2 +1,5 @@
+== Version 0.0.1
+- First working version.
+
 == Version 0.0.0
 - First version, not working yet.
