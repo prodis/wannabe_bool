@@ -4,7 +4,7 @@ require 'spec_helper'
 describe WannabeBool::Object do
   context String do
     describe '#to_b' do
-      [ '1', '1 ', ' 1 ', ' 1',
+      [ '1', '1 ', ' 1', ' 1 ',
         't', 't ', ' t', ' t ',
         'T', 'T ', ' T', ' T ',
         'true', 'true ', ' true', ' true ',
