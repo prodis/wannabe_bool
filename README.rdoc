@@ -13,6 +13,8 @@ If string, integer, symbol and nil values wanna be a boolean value, they can.
 
 == Using
 
+Method <b>to_b</b> method is available on String, Symbol, Integer, TrueClass, FalseClass and NilClass.
+
   require 'wannabe_bool'
 
   # ----------------------------------------
