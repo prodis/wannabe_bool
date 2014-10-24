@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-describe WannabeBool::String do
+describe WannabeBool::Object do
   context String do
     describe '#to_b' do
       [ '1', '1 ', ' 1 ', ' 1',

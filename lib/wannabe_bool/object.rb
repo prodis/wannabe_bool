@@ -1,6 +1,6 @@
 # encoding: utf-8
 module WannabeBool
-  module String
+  module Object
     TRUE_VALUES = %W{1 t true on y yes}.freeze
 
     def to_b
@@ -10,9 +10,9 @@ module WannabeBool
 end
 
 class String
-  include WannabeBool::String
+  include WannabeBool::Object
 end
 
 class Symbol
-  include WannabeBool::String
+  include WannabeBool::Object
 end

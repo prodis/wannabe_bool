@@ -2,4 +2,4 @@
 require 'wannabe_bool/boolean'
 require 'wannabe_bool/integer'
 require 'wannabe_bool/nil'
-require 'wannabe_bool/string'
+require 'wannabe_bool/object'
