@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = WannabeBool::VERSION
   spec.authors       = ['Prodis a.k.a. Fernando Hamasaki de Amorim']
   spec.email         = ['prodis@gmail.com']
-  spec.description   = 'If String, Integer, Symbol and Nil values wanna be a boolean value, they can.'
+  spec.description   = 'If string, integer, symbol and nil values wanna be a boolean value, they can.'
   spec.summary       = spec.description
   spec.homepage      = 'https://github.com/prodis/wannabe_bool'
   spec.license       = 'MIT'
