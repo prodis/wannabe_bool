@@ -1,6 +1,6 @@
 = Wannabe Bool
 
-If String, Integer, Symbol and Nil values wanna be a boolean value, they can.
+If string, integer, symbol and nil values wanna be a boolean value, they can.
 
 == Installing
 
@@ -15,6 +15,93 @@ If String, Integer, Symbol and Nil values wanna be a boolean value, they can.
 
   require 'wannabe_bool'
 
+  # String
+
+  '1'.to_b        # => true
+  ' 1 '.to_b      # => true
+  't'.to_b        # => true
+  ' t '.to_b      # => true
+  'T'.to_b        # => true
+  ' T '.to_b      # => true
+  'true'.to_b     # => true
+  ' true '.to_b   # => true
+  'TRUE'.to_b     # => true
+  ' TRUE '.to_b   # => true
+  'on'.to_b       # => true
+  ' on '.to_b     # => true
+  'ON'.to_b       # => true
+  ' ON '.to_b     # => true
+  'y'.to_b        # => true
+  ' y '.to_b      # => true
+  'Y'.to_b        # => true
+  ' Y '.to_b      # => true
+  'yes'.to_b      # => true
+  ' yes '.to_b    # => true
+  'YES'.to_b      # => true
+  ' YES '.to_b    # => true
+
+  ''.to_b         # => false
+  '0'.to_b        # => false
+  '2'.to_b        # => false
+  'f'.to_b        # => false
+  'F'.to_b        # => false
+  'false'.to_b    # => false
+  'FALSE'.to_b    # => false
+  'off'.to_b      # => false
+  'OFF'.to_b      # => false
+  'n'.to_b        # => false
+  'N'.to_b        # => false
+  'no'.to_b       # => false
+  'NO'.to_b       # => false
+  'not'.to_b      # => false
+  'NOT'.to_b      # => false
+  'wherever'.to_b # => false
+
+
+  # Symbol
+
+  :1.to_b        # => true
+  :t.to_b        # => true
+  :T.to_b        # => true
+  :true.to_b     # => true
+  :TRUE.to_b     # => true
+  :on.to_b       # => true
+  :ON.to_b       # => true
+  :y.to_b        # => true
+  :Y.to_b        # => true
+  :yes.to_b      # => true
+  :YES.to_b      # => true
+
+  :f.to_b        # => false
+  :F.to_b        # => false
+  :false.to_b    # => false
+  :FALSE.to_b    # => false
+  :off.to_b      # => false
+  :OFF.to_b      # => false
+  :n.to_b        # => false
+  :N.to_b        # => false
+  :no.to_b       # => false
+  :NO.to_b       # => false
+  :not.to_b      # => false
+  :NOT.to_b      # => false
+  :wherever.to_b # => false
+
+
+  # Integer
+  1.to_b # => true
+
+  0.to_b # => false
+  2.to_b # => false
+
+  # TrueClass
+
+  true.to_b # => true
+
+  # FalseClass
+  false.to_b # => false
+
+  # NilClass
+  nil.to_b # => false
 
 == Author
 - {Fernando Hamasaki de Amorim (prodis)}[http://prodis.blog.br]
