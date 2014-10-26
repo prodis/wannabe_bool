@@ -2,6 +2,12 @@
 
 If string, integer, symbol and nil values wanna be a boolean value, they can.
 
+{<img src="https://badge.fury.io/rb/wannabe_bool.png" alt="Gem Version" />}[http://badge.fury.io/rb/wannabe_bool]
+{<img src="https://travis-ci.org/prodis/wannabe_bool.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/prodis/wannabe_bool]
+{<img src="https://coveralls.io/repos/prodis/wannabe_bool/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/prodis/wannabe_bool]
+{<img src="https://codeclimate.com/github/prodis/wannabe_bool/badges/gpa.svg" alt="Code Climate" />}[https://codeclimate.com/github/prodis/wannabe_bool]
+
+
 == Installing
 
 === Gemfile
