@@ -1,6 +1,6 @@
 = Wannabe Bool
 
-If string, integer, symbol and nil values wanna be a boolean value, they can.
+If <b>string</b>, <b>integer</b>, <b>symbol</b> and <b>nil</b> values wanna be a <b>boolean</b> value, they can with the new <code>to_b</code> method.
 
 {<img src="https://badge.fury.io/rb/wannabe_bool.png" alt="Gem Version" />}[http://badge.fury.io/rb/wannabe_bool]
 {<img src="https://travis-ci.org/prodis/wannabe_bool.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/prodis/wannabe_bool]
@@ -19,13 +19,11 @@ If string, integer, symbol and nil values wanna be a boolean value, they can.
 
 == Using
 
-Method <b>to_b</b> method is available on String, Symbol, Integer, TrueClass, FalseClass and NilClass.
+<code>to_b</code> method is available on <code>String</code>, <code>Symbol</code>, <code>Integer</code>, <code>TrueClass</code>, <code>FalseClass</code> and <code>NilClass</code>.
 
   require 'wannabe_bool'
 
-  # ----------------------------------------
-  # String
-  # ----------------------------------------
+==== String
   '1'.to_b        # => true
   't'.to_b        # => true
   'T'.to_b        # => true
@@ -67,9 +65,7 @@ Method <b>to_b</b> method is available on String, Symbol, Integer, TrueClass, Fa
   'NOT'.to_b      # => false
   'wherever'.to_b # => false
 
-  # ----------------------------------------
-  # Symbol
-  # ----------------------------------------
+==== Symbol
   :1.to_b        # => true
   :t.to_b        # => true
   :T.to_b        # => true
@@ -96,34 +92,27 @@ Method <b>to_b</b> method is available on String, Symbol, Integer, TrueClass, Fa
   :NOT.to_b      # => false
   :wherever.to_b # => false
 
-  # ----------------------------------------
-  # Integer
-  # ----------------------------------------
+==== Integer
   1.to_b # => true
 
   0.to_b # => false
   2.to_b # => false
 
-  # ----------------------------------------
-  # TrueClass
-  # ----------------------------------------
+==== TrueClass
   true.to_b # => true
 
-  # ----------------------------------------
-  # FalseClass
-  # ----------------------------------------
+==== FalseClass
   false.to_b # => false
 
-  # ----------------------------------------
-  # NilClass
-  # ----------------------------------------
+==== NilClass
   nil.to_b # => false
+
 
 == Author
 - {Fernando Hamasaki de Amorim (prodis)}[http://prodis.blog.br]
 
 
-== Contributing to wannabe_bool
+== Contributing to <b>wannabe_bool</b>
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
