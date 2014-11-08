@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = WannabeBool::VERSION
   spec.authors       = ['Prodis a.k.a. Fernando Hamasaki de Amorim']
   spec.email         = ['prodis@gmail.com']
-  spec.description   = 'If string, integer, symbol and nil values wanna be a boolean value, they can.'
-  spec.summary       = spec.description
+  spec.summary       = 'If string, integer, symbol and nil values wanna be a boolean value, they can with the new #to_b method.'
+  spec.description   = spec.summary
   spec.homepage      = 'https://github.com/prodis/wannabe_bool'
   spec.license       = 'MIT'
 
@@ -19,6 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.platform              = Gem::Platform::RUBY
   spec.required_ruby_version = Gem::Requirement.new('>= 1.9.3')
+  spec.post_install_message  = %{
+  Thank you for installing one more gem from a Brazilian Ruby Developer.
+  }
 
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'rake'
