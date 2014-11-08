@@ -1,3 +1,6 @@
+== Version 0.0.2
+- Gemspec update.
+
 == Version 0.0.1
 - First working version.
 
