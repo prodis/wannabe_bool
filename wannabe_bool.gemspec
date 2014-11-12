@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   Wannabe Bool installed!
   You have just gotten one more gem from a Brazilian Ruby Developer.
   Enjoy it, Prodis.
+
   }
 
   spec.add_development_dependency 'coveralls'
