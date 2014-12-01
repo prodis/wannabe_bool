@@ -10,6 +10,8 @@ module WannabeBool
         attributes.each do |attr|
           raise ArgumentError, "#{attr} method is not defined." unless method_defined?(attr)
 
+          next if method_defined?("#{attr}?")
+
           define_method("#{attr}?") do
             send(attr).to_b
           end
