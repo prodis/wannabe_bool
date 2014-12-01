@@ -1,3 +1,6 @@
+== Version 0.1.0
+- New <code>WannabeBool::Attributes</code> module to create predicate methods.
+
 == Version 0.0.2
 - Gemspec update.
 
