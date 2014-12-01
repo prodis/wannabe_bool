@@ -1,6 +1,7 @@
 = Wannabe Bool
 
 If <b>string</b>, <b>integer</b>, <b>symbol</b> and <b>nil</b> values wanna be a <b>boolean</b> value, they can with the new <code>to_b</code> method.
+Moreover, you can use <code>WannabeBool::Attributes</code> module to create predicate methods in your classes.
 
 {<img src="https://badge.fury.io/rb/wannabe_bool.png" alt="Gem Version" />}[http://badge.fury.io/rb/wannabe_bool]
 {<img src="https://travis-ci.org/prodis/wannabe_bool.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/prodis/wannabe_bool]
@@ -106,6 +107,31 @@ If <b>string</b>, <b>integer</b>, <b>symbol</b> and <b>nil</b> values wanna be a
 
 ==== NilClass
   nil.to_b # => false
+
+Creating predicate methods:
+
+  class Fake
+    include WannabeBool::Attributes
+
+    attr_accessor :name, :main, :published
+    attr_wannabe_bool :main, :published
+  end
+
+  fake = Fake.new
+  fake.main?      # => false
+  fake.published? # => false
+
+  fake.main = true
+  fake.main? # => true
+
+  fake.published = 1
+  fake.published? # => true
+
+  fake.main = 'true'
+  fake.main? # => true
+
+  fake.published = :true
+  fake.published? # => true
 
 
 == Author
