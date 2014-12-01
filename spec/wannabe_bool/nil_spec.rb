@@ -1,6 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-
 describe WannabeBool::Nil do
   context NilClass do
     subject { nil }

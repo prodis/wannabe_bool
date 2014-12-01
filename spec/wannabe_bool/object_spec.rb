@@ -1,6 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-
 describe WannabeBool::Object do
   context String do
     describe '#to_b' do
