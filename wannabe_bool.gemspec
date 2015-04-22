@@ -19,12 +19,6 @@ Gem::Specification.new do |spec|
 
   spec.platform              = Gem::Platform::RUBY
   spec.required_ruby_version = Gem::Requirement.new('>= 1.9.3')
-  spec.post_install_message  = %{
-  Wannabe Bool installed!
-  You have just gotten one more gem from a Brazilian Ruby Developer.
-  Enjoy it, Prodis.
-
-  }
 
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'rake'
