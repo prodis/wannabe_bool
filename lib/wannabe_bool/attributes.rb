@@ -1,4 +1,3 @@
-# encoding: utf-8
 module WannabeBool
   module Attributes
     def self.included(base)

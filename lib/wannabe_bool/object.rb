@@ -1,4 +1,3 @@
-# encoding: utf-8
 module WannabeBool
   module Object
     TRUE_VALUES = %W{1 t true on y yes}.freeze

@@ -1,4 +1,3 @@
-# encoding: utf-8
 describe WannabeBool::Boolean do
   context TrueClass do
     subject { true }

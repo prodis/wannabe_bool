@@ -1,4 +1,3 @@
-# encoding: utf-8
 module WannabeBool
   module Integer
     def to_b

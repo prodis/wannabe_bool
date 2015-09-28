@@ -1,4 +1,3 @@
-# encoding: utf-8
 describe WannabeBool::Integer do
   context Integer do
     describe '#to_b' do

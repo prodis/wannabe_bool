@@ -1,4 +1,3 @@
-# encoding: utf-8
 describe WannabeBool::Object do
   context String do
     describe '#to_b' do

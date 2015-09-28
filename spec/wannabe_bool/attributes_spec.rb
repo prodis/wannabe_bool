@@ -1,4 +1,3 @@
-# encoding: utf-8
 class Fake
   include WannabeBool::Attributes
 
