@@ -1,9 +1,15 @@
 module WannabeBool
   module Object
-    TRUE_VALUES = %W{1 t true on y yes}.freeze
+    TRUE_VALUES = %W{t true on y yes}.freeze
 
     def to_b
-      TRUE_VALUES.include?(self.to_s.strip.downcase)
+      value = self.to_s.strip.downcase
+
+      if TRUE_VALUES.include?(value)
+        true
+      else
+        value.to_i.to_b
+      end
     end
   end
 end
