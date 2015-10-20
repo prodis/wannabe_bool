@@ -1,7 +1,7 @@
 module WannabeBool
   module Integer
     def to_b
-      self == 1
+      self != 0
     end
   end
 end
