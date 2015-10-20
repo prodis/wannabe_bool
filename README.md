@@ -33,6 +33,9 @@ require 'wannabe_bool'
 #### String
 ```ruby
 '1'.to_b        # => true
+'2'.to_b        # => true
+'-1'.to_b       # => true
+'-2'.to_b       # => true
 't'.to_b        # => true
 'T'.to_b        # => true
 'true'.to_b     # => true
@@ -44,6 +47,9 @@ require 'wannabe_bool'
 'YES'.to_b      # => true
 
 ' 1 '.to_b      # => true
+' 2 '.to_b      # => true
+' -1 '.to_b     # => true
+' -2 '.to_b     # => true
 ' t '.to_b      # => true
 ' T '.to_b      # => true
 ' true '.to_b   # => true
@@ -58,7 +64,6 @@ require 'wannabe_bool'
 
 ''.to_b         # => false
 '0'.to_b        # => false
-'2'.to_b        # => false
 'f'.to_b        # => false
 'F'.to_b        # => false
 'false'.to_b    # => false
@@ -76,7 +81,7 @@ require 'wannabe_bool'
 
 #### Symbol
 ```ruby
-:1.to_b        # => true
+:'1'.to_b      # => true
 :t.to_b        # => true
 :T.to_b        # => true
 :true.to_b     # => true
@@ -105,10 +110,11 @@ require 'wannabe_bool'
 
 #### Integer
 ```ruby
-1.to_b # => true
-
-0.to_b # => false
-2.to_b # => false
+0.to_b  # => false
+1.to_b  # => true
+2.to_b  # => true
+-1.to_b # => true
+-2.to_b # => true
 ```
 
 #### TrueClass
@@ -126,7 +132,7 @@ false.to_b # => false
 nil.to_b # => false
 ```
 
-Creating predicate methods:
+#### Creating predicate methods
 
 ```ruby
 class Fake
