@@ -159,6 +159,10 @@ fake.published = :true
 fake.published? # => true
 ```
 
+## Changelog
+
+[See the changes in each version.](CHANGELOG.md)
+
 ## Author
 [Fernando Hamasaki de Amorim (prodis)](http://prodis.blog.br)
 
