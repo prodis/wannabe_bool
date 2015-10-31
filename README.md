@@ -8,6 +8,7 @@ Moreover, you can use `WannabeBool::Attributes` module to create predicate metho
 [![Coverage Status](https://coveralls.io/repos/prodis/wannabe_bool/badge.svg?branch=master&service=github)](https://coveralls.io/github/prodis/wannabe_bool?branch=master)
 [![Code Climate](https://codeclimate.com/github/prodis/wannabe_bool/badges/gpa.svg)](https://codeclimate.com/github/prodis/wannabe_bool)
 [![Dependency Status](https://gemnasium.com/prodis/wannabe_bool.svg)](https://gemnasium.com/prodis/wannabe_bool)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 
 ## Installing
