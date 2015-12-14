@@ -1,8 +1,6 @@
-module WannabeBool
-  module Numeric
-    def to_b
-      !self.zero?
-    end
+module WannabeBool::Numeric
+  def to_b
+    !self.zero?
   end
 end
 

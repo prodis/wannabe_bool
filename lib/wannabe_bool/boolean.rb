@@ -1,8 +1,6 @@
-module WannabeBool
-  module Boolean
-    def to_b
-      self
-    end
+module WannabeBool::Boolean
+  def to_b
+    self
   end
 end
 
