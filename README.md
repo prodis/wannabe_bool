@@ -1,6 +1,6 @@
 # Wannabe Bool
 
-If **string**, **integer**, **symbol** and **nil** values wanna be a **boolean** value, they can with the new `to_b` method.
+If **string**, **numeric**, **symbol** and **nil** values wanna be a **boolean** value, they can with the new `to_b` method.
 Moreover, you can use `WannabeBool::Attributes` module to create predicate methods in your classes.
 
 [![Gem Version](https://badge.fury.io/rb/wannabe_bool.svg)](http://badge.fury.io/rb/wannabe_bool)
@@ -24,7 +24,7 @@ $ gem install wannabe_bool
 
 ## Using
 
-`to_b` method is available on `String`, `Symbol`, `Integer`, `TrueClass`, `FalseClass` and `NilClass`.
+`to_b` method is available on `String`, `Symbol`, `Numeric`, `TrueClass`, `FalseClass` and `NilClass`.
 
 ```ruby
 require 'wannabe_bool'
@@ -109,12 +109,33 @@ require 'wannabe_bool'
 ```
 
 #### Integer
+##### Integer
 ```ruby
 0.to_b  # => false
 1.to_b  # => true
 2.to_b  # => true
 -1.to_b # => true
 -2.to_b # => true
+```
+
+##### Float
+```ruby
+0.0.to_b  # => false
+0.1.to_b  # => true
+1.0.to_b  # => true
+-0.1.to_b # => true
+-1.0.to_b # => true
+```
+
+##### BigDecimal
+```ruby
+require 'bigdecimal'
+
+BigDecimal('0.0').to_b  # => false
+BigDecimal('0.1').to_b  # => true
+BigDecimal('1.0').to_b  # => true
+BigDecimal('-0.1').to_b # => true
+BigDecimal('-1.0').to_b # => true
 ```
 
 #### TrueClass
