@@ -18,7 +18,7 @@ describe WannabeBool::Object do
       ].each do |value|
         context "when value is '#{value}'" do
           subject { value }
-          it { expect(subject.to_b).to eql true }
+          it { expect(subject.to_b).to be true }
         end
       end
 
@@ -34,7 +34,7 @@ describe WannabeBool::Object do
       ].each do |value|
         context "when value is '#{value}'" do
           subject { value }
-          it { expect(subject.to_b).to eql false }
+          it { expect(subject.to_b).to be false }
         end
       end
     end
@@ -59,7 +59,7 @@ describe WannabeBool::Object do
       ].each do |value|
         context "when value is '#{value}'" do
           subject { value }
-          it { expect(subject.to_b).to eql true }
+          it { expect(subject.to_b).to be true }
         end
       end
 
@@ -76,7 +76,7 @@ describe WannabeBool::Object do
       ].each do |value|
         context "when value is '#{value}'" do
           subject { value }
-          it { expect(subject.to_b).to eql false }
+          it { expect(subject.to_b).to be false }
         end
       end
     end

@@ -3,7 +3,7 @@ describe WannabeBool::Boolean do
     subject { true }
 
     describe '#to_b' do
-      it { expect(subject.to_b).to eq true }
+      it { expect(subject.to_b).to be true }
     end
   end
 
@@ -11,7 +11,7 @@ describe WannabeBool::Boolean do
     subject { false }
 
     describe '#to_b' do
-      it { expect(subject.to_b).to eq false }
+      it { expect(subject.to_b).to be false }
     end
   end
 end
