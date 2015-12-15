@@ -2,9 +2,6 @@ describe WannabeBool::Object do
   context String do
     describe '#to_b' do
       [ '1', '1 ', ' 1', ' 1 ',
-        '2', '2 ', ' 2', ' 2 ',
-       '-1', '-1 ', ' -1', ' -1 ',
-       '-2', '-2 ', ' -2', ' -2 ',
         't', 't ', ' t', ' t ',
         'T', 'T ', ' T', ' T ',
         'true', 'true ', ' true', ' true ',
@@ -24,6 +21,9 @@ describe WannabeBool::Object do
 
       [ '',
         '0',
+        '2', '2 ', ' 2', ' 2 ',
+       '-1', '-1 ', ' -1', ' -1 ',
+       '-2', '-2 ', ' -2', ' -2 ',
         'f', 'F',
         'false', 'FALSE',
         'off', 'OFF',
@@ -43,9 +43,6 @@ describe WannabeBool::Object do
   context Symbol do
     describe '#to_b' do
       [ :'1', :'1 ', :' 1 ', :' 1',
-        :'2', :'2 ', :' 2 ', :' 2',
-        :'-1', :'-1 ', :' -1 ', :' -1',
-        :'-2', :'-2 ', :' -2 ', :' -2',
         :t, :'t ', :' t', :' t ',
         :T, :'T ', :' T', :' T ',
         :true, :'true ', :' true', :' true ',
@@ -65,6 +62,9 @@ describe WannabeBool::Object do
 
       [ :'',
         :'0',
+        :'2',
+        :'-1',
+        :'-2',
         :f, :F,
         :false,
         :FALSE,
