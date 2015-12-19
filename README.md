@@ -31,11 +31,12 @@ require 'wannabe_bool'
 ```
 
 #### String
+Returns `true` if string is one of **t**, **true**, **on**, **y**, **yes** or **1** values. Returns `false` otherwise.
+
+Ignores trailing spaces and letter cases.
+
 ```ruby
 '1'.to_b        # => true
-'2'.to_b        # => true
-'-1'.to_b       # => true
-'-2'.to_b       # => true
 't'.to_b        # => true
 'T'.to_b        # => true
 'true'.to_b     # => true
@@ -47,9 +48,6 @@ require 'wannabe_bool'
 'YES'.to_b      # => true
 
 ' 1 '.to_b      # => true
-' 2 '.to_b      # => true
-' -1 '.to_b     # => true
-' -2 '.to_b     # => true
 ' t '.to_b      # => true
 ' T '.to_b      # => true
 ' true '.to_b   # => true
@@ -64,6 +62,9 @@ require 'wannabe_bool'
 
 ''.to_b         # => false
 '0'.to_b        # => false
+'2'.to_b        # => false
+'-1'.to_b       # => false
+'-2'.to_b       # => false
 'f'.to_b        # => false
 'F'.to_b        # => false
 'false'.to_b    # => false
@@ -80,6 +81,8 @@ require 'wannabe_bool'
 ```
 
 #### Symbol
+Same as `symbol.to_s.to_b`.
+
 ```ruby
 :'1'.to_b      # => true
 :t.to_b        # => true
@@ -108,7 +111,9 @@ require 'wannabe_bool'
 :wherever.to_b # => false
 ```
 
-#### Integer
+#### Numeric
+Returns `false` if number is zero. Returns `true` otherwise.
+
 ##### Integer
 ```ruby
 0.to_b  # => false
@@ -139,16 +144,22 @@ BigDecimal('-1.0').to_b # => true
 ```
 
 #### TrueClass
+Returns `true`.
+
 ```ruby
 true.to_b # => true
 ```
 
 #### FalseClass
+Returns `false`.
+
 ```ruby
 false.to_b # => false
 ```
 
 #### NilClass
+Returns `false`.
+
 ```ruby
 nil.to_b # => false
 ```
