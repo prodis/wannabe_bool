@@ -1,8 +1,6 @@
-module WannabeBool
-  module Nil
-    def to_b
-      false
-    end
+module WannabeBool::Nil
+  def to_b
+    false
   end
 end
 

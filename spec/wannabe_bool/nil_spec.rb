@@ -3,7 +3,7 @@ describe WannabeBool::Nil do
     subject { nil }
 
     describe '#to_b' do
-      it { expect(subject.to_b).to eq false }
+      it { expect(subject.to_b).to be false }
     end
   end
 end
