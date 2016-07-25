@@ -15,7 +15,7 @@ class Fake
   end
 end
 
-describe WannabeBool::Attributes do
+RSpec.describe WannabeBool::Attributes do
   context 'when reader attribute exists' do
     let(:subject_methods) do
       fake = Fake.new(true, true)

@@ -1,4 +1,4 @@
-describe WannabeBool::Symbol do
+RSpec.describe WannabeBool::Symbol do
   describe '#to_b' do
     [ :'1', :'1 ', :' 1 ', :' 1',
       :t, :'t ', :' t', :' t ',

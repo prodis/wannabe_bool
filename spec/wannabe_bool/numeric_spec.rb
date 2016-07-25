@@ -1,6 +1,6 @@
 require 'bigdecimal'
 
-describe WannabeBool::Numeric do
+RSpec.describe WannabeBool::Numeric do
   context Integer do
     describe '#to_b' do
       context 'when value is 0' do

@@ -1,4 +1,4 @@
-describe WannabeBool::String do
+RSpec.describe WannabeBool::String do
   describe '#to_b' do
     [ '1', '1 ', ' 1', ' 1 ',
       't', 't ', ' t', ' t ',

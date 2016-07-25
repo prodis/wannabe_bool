@@ -1,4 +1,4 @@
-describe WannabeBool::Boolean do
+RSpec.describe WannabeBool::Boolean do
   context TrueClass do
     subject { true }
 
