@@ -1,5 +1,6 @@
 module WannabeBool; end
 
+require 'wannabe_bool/configuration'
 require 'wannabe_bool/boolean'
 require 'wannabe_bool/nil'
 require 'wannabe_bool/numeric'
