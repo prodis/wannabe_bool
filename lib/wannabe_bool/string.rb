@@ -7,7 +7,7 @@ module WannabeBool::String
     return true  if TRUES.include?(value)
     return false if FALSES.include?(value)
 
-    false
+    WannabeBool.invalid_value_behaviour_module.execute
   end
 end
 

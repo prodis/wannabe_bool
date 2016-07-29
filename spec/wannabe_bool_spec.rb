@@ -15,11 +15,11 @@ RSpec.describe WannabeBool do
 
       context 'setting a behaviour' do
         before do
-          subject.invalid_value_behaviour = :exception
+          subject.invalid_value_behaviour = :error
         end
 
         it 'returns set behaviour' do
-          expect(subject.invalid_value_behaviour).to eq :exception
+          expect(subject.invalid_value_behaviour).to eq :error
         end
       end
     end
@@ -31,12 +31,17 @@ RSpec.describe WannabeBool do
             subject.invalid_value_behaviour = behaviour
             expect(subject.invalid_value_behaviour).to eq behaviour
           end
+
+          it "set module behaviour" do
+            subject.invalid_value_behaviour = behaviour
+            expect(subject.invalid_value_behaviour_module.to_s).to eq "WannabeBool::InvalidValueBehaviour::#{behaviour.to_s.capitalize}"
+          end
         end
       end
 
       context 'when behaviour is not allowed' do
         it 'raises argument error' do
-          expect { subject.invalid_value_behaviour = :true }.to raise_error(ArgumentError, ':true is not one of allowed behaviours: :false, :nil, :exception')
+          expect { subject.invalid_value_behaviour = :true }.to raise_error(ArgumentError, ':true is not one of allowed behaviours: :false, :nil, :error')
         end
       end
     end

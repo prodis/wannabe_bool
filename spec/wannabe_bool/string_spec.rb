@@ -81,7 +81,7 @@ RSpec.describe WannabeBool::String do
 
       context 'with :exception invalid value behaviour' do
         before do
-          WannabeBool.invalid_value_behaviour = :exception
+          WannabeBool.invalid_value_behaviour = :error
         end
 
         [ '', 'nil',
@@ -91,7 +91,7 @@ RSpec.describe WannabeBool::String do
         ].each do |value|
           context "when string is '#{value}'" do
             subject { value }
-            it { expect { subject.to_b }.to raise_error(ArgumentError) }
+            it { expect { subject.to_b }.to raise_error(ArgumentError, 'is not a valid boolean representation') }
           end
         end
       end
