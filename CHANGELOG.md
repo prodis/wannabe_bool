@@ -1,5 +1,6 @@
 | Version | Changes |
 | ------- | ------- |
+| 0.6.0   | Invalid value behaviours. [Issue #5](https://github.com/prodis/wannabe_bool/issues/5). |
 | 0.5.0   | No Ruby version required. |
 | 0.4.0   | `to_b` in `Numeric` class, not only in `Integer` class. |
 | 0.3.0   | Fix integer to boolean conversion. [Issue #2](https://github.com/prodis/wannabe_bool/issues/2) |
