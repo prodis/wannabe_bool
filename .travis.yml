@@ -1,10 +1,5 @@
 language: ruby
 
-before_install:
-  - rvm get head
-  - gem update --system
-  - gem --version
-
 rvm:
   - 2.0.0
   - 2.1.10
