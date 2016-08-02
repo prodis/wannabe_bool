@@ -14,8 +14,8 @@ RSpec.describe WannabeBool::String do
         'YES', 'YES ', ' YES', ' YES '
       ].each do |value|
         context "when string is '#{value}'" do
-          subject { value }
-          it { expect(subject.to_b).to be true }
+          subject { value.to_b }
+          it { is_expected.to be true }
         end
       end
     end
@@ -34,20 +34,20 @@ RSpec.describe WannabeBool::String do
         'NO', 'NO ', ' NO', ' NO '
       ].each do |value|
         context "when string is '#{value}'" do
-          subject { value }
-          it { expect(subject.to_b).to be false }
+          subject { value.to_b }
+          it { is_expected.to be false }
         end
       end
     end
 
     context 'invalid values' do
       after do
-        WannabeBool.invalid_value_behaviour = :false
+        WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
       end
 
-      context 'with :false invalid value behaviour' do
+      context 'when an invalid value behaviour is given' do
         before do
-          WannabeBool.invalid_value_behaviour = :false
+          WannabeBool.invalid_value_behaviour = -> { :wherever }
         end
 
         [ '', 'nil',
@@ -56,42 +56,9 @@ RSpec.describe WannabeBool::String do
           'wherever', 'Prodis'
         ].each do |value|
           context "when string is '#{value}'" do
-            subject { value }
-            it { expect(subject.to_b).to be false }
-          end
-        end
-      end
-
-      context 'with :nil invalid value behaviour' do
-        before do
-          WannabeBool.invalid_value_behaviour = :nil
-        end
-
-        [ '', 'nil',
-          '2', '-1', '-2',
-          'not', 'NOT',
-          'wherever', 'Prodis'
-        ].each do |value|
-          context "when string is '#{value}'" do
-            subject { value }
-            it { expect(subject.to_b).to be nil }
-          end
-        end
-      end
-
-      context 'with :exception invalid value behaviour' do
-        before do
-          WannabeBool.invalid_value_behaviour = :error
-        end
-
-        [ '', 'nil',
-          '2', '-1', '-2',
-          'not', 'NOT',
-          'wherever', 'Prodis'
-        ].each do |value|
-          context "when string is '#{value}'" do
-            subject { value }
-            it { expect { subject.to_b }.to raise_error(ArgumentError, 'is not a valid boolean representation') }
+            it 'returns the result of the given behaviour' do
+              expect(value.to_b).to be :wherever
+            end
           end
         end
       end

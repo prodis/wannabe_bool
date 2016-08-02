@@ -1,21 +1,12 @@
 module WannabeBool::Configuration
-  ALLOWED_INVALID_VALUE_BEHAVIOURS = [:false, :nil, :error]
-
   def invalid_value_behaviour=(behaviour)
-    unless ALLOWED_INVALID_VALUE_BEHAVIOURS.include?(behaviour)
-      raise ArgumentError, ":#{behaviour} is not one of allowed behaviours: :#{ALLOWED_INVALID_VALUE_BEHAVIOURS.join(', :')}"
-    end
+    raise ArgumentError, 'behaviour does not respond to call method' unless behaviour.respond_to?(:call)
 
     @invalid_value_behaviour = behaviour
-    @invalid_value_behaviour_module = WannabeBool::InvalidValueBehaviour.const_get(behaviour.to_s.capitalize)
   end
 
   def invalid_value_behaviour
-    @invalid_value_behaviour ||= :false
-  end
-
-  def invalid_value_behaviour_module
-    @invalid_value_behaviour_module ||= WannabeBool::InvalidValueBehaviour::False
+    @invalid_value_behaviour ||= WannabeBool::InvalidValueBehaviour::False
   end
 end
 
