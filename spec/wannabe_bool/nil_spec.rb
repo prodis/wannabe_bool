@@ -1,4 +1,4 @@
-describe WannabeBool::Nil do
+RSpec.describe WannabeBool::Nil do
   context NilClass do
     subject { nil }
 

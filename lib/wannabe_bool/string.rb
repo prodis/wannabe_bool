@@ -1,8 +1,13 @@
 module WannabeBool::String
-  TRUES = %W{t true on y yes 1}.freeze
+  TRUES  = %W{t true on y yes 1}.freeze
+  FALSES = %W{f false off n no 0}.freeze
 
   def to_b
-    TRUES.include?(self.strip.downcase)
+    value = self.strip.downcase
+    return true  if TRUES.include?(value)
+    return false if FALSES.include?(value)
+
+    WannabeBool.invalid_value_behaviour.call
   end
 end
 
