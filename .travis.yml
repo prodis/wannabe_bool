@@ -1,6 +1,7 @@
 language: ruby
 
 before_install:
+  - rvm get head
   - gem update --system
   - gem --version
 
