@@ -90,7 +90,7 @@ It ignores trailing spaces and letter cases.
 ##### Invalid Value Behaviour
 You can configure the result for invalid boolean string representations, using the `WannabeBool.invalid_value_behaviour` option.
 
-There are 3 pre-defined behaviours available, to return `false`, `nil` or raise an `ArgumentError`:
+There are 3 predefined behaviours available: to return `false` (default), `nil` or raise an `ArgumentError`:
 
 ```ruby
 # WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
@@ -231,4 +231,3 @@ fake.published? # => true
 - Don't forget to rebase with branch master in main project before submit the pull request.
 - Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 - Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
-
