@@ -1,11 +1,16 @@
 language: ruby
 
+before_install:
+  - gem update --system
+  - gem --version
+
 rvm:
   - 2.0.0
   - 2.1.10
   - 2.2.5
   - 2.3.1
   - ruby-head
+  - jruby-9
   - jruby
   - jruby-19mode
   - jruby-head
@@ -14,6 +19,7 @@ rvm:
 
 matrix:
   allow_failures:
+    - rvm: jruby
     - rvm: jruby-19mode
     - rvm: jruby-head
     - rvm: ruby-head
