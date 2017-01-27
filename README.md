@@ -86,6 +86,9 @@ It ignores trailing spaces and letter cases.
 ' N '.to_b     # => false
 ' no '.to_b    # => false
 ' NO '.to_b    # => false
+
+''.to_b  # => false
+' '.to_b # => false
 ```
 ##### Invalid Value Behaviour
 You can configure the result for invalid boolean string representations, using the `WannabeBool.invalid_value_behaviour` option.
