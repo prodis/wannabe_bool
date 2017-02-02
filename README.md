@@ -31,7 +31,7 @@ $ gem install wannabe_bool
 require 'wannabe_bool'
 ```
 
-#### String
+### String
 * Returns `true` if string is one of these values: **t**, **true**, **on**, **y**, **yes**, **1**.
 * Returns `false` if string is one of these values: **f**, **false**, **off**, **n**, **no**, **0**.
 * For invalid boolean string representations, returns `false` by default. See "Invalid Value Behaviour" section for more options.
@@ -90,7 +90,7 @@ It ignores trailing spaces and letter cases.
 ''.to_b  # => false
 ' '.to_b # => false
 ```
-##### Invalid Value Behaviour
+#### Invalid Value Behaviour
 You can configure the result for invalid boolean string representations, using the `WannabeBool.invalid_value_behaviour` option.
 
 There are 3 predefined behaviours available: to return `false` (default), `nil` or raise an `ArgumentError`:
@@ -115,7 +115,7 @@ WannabeBool.invalid_value_behaviour = -> { :prodis }
 
 Note that `WannabeBool.invalid_value_behaviour` is a global configuration, so all results for `to_b` method with invalid boolean string representations will be affected.
 
-#### Symbol
+### Symbol
 Same as `symbol.to_s.to_b`.
 
 ```ruby
@@ -134,10 +134,10 @@ Same as `symbol.to_s.to_b`.
 :no.to_b    # => false
 ```
 
-#### Numeric
+### Numeric
 Returns `false` if number is zero. Returns `true` otherwise.
 
-##### Integer
+#### Integer
 ```ruby
 0.to_b  # => false
 1.to_b  # => true
@@ -146,7 +146,7 @@ Returns `false` if number is zero. Returns `true` otherwise.
 -2.to_b # => true
 ```
 
-##### Float
+#### Float
 ```ruby
 0.0.to_b  # => false
 0.1.to_b  # => true
@@ -155,7 +155,7 @@ Returns `false` if number is zero. Returns `true` otherwise.
 -1.0.to_b # => true
 ```
 
-##### BigDecimal
+#### BigDecimal
 ```ruby
 require 'bigdecimal'
 
@@ -166,28 +166,28 @@ BigDecimal('-0.1').to_b # => true
 BigDecimal('-1.0').to_b # => true
 ```
 
-#### TrueClass
+### TrueClass
 Returns `true`.
 
 ```ruby
 true.to_b # => true
 ```
 
-#### FalseClass
+### FalseClass
 Returns `false`.
 
 ```ruby
 false.to_b # => false
 ```
 
-#### NilClass
+### NilClass
 Returns `false`.
 
 ```ruby
 nil.to_b # => false
 ```
 
-### Creating predicate methods
+## Creating predicate methods
 
 ```ruby
 class Fake
