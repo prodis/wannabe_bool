@@ -96,7 +96,7 @@ You can configure the result for invalid boolean string representations, using t
 There are 3 predefined behaviours available: to return `false` (default), `nil` or raise an `ArgumentError`:
 
 ```ruby
-# WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
+WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
 'wherever'.to_b # => false
 
 WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::Nil
