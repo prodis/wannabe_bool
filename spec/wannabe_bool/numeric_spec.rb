@@ -13,6 +13,8 @@ RSpec.describe WannabeBool::Numeric do
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_b).to be true }
+            it { expect(subject.to_boolean).to be subject.to_b }
+            it { expect(subject.to_bool).to be subject.to_b }
           end
         end
       end
@@ -22,6 +24,8 @@ RSpec.describe WannabeBool::Numeric do
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_b).to be true }
+            it { expect(subject.to_boolean).to be subject.to_b }
+            it { expect(subject.to_bool).to be subject.to_b }
           end
         end
       end
@@ -33,16 +37,22 @@ RSpec.describe WannabeBool::Numeric do
       context 'when value is 0.0' do
         subject { 0.0 }
         it { expect(subject.to_b).to be false }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
 
       context "when value is positive" do
         subject { Random.rand }
         it { expect(subject.to_b).to be true }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
 
       context "when value is negative" do
         subject { Random.rand * -1 }
         it { expect(subject.to_b).to be true }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
     end
   end
@@ -52,16 +62,22 @@ RSpec.describe WannabeBool::Numeric do
       context 'when value is 0.0' do
         subject { BigDecimal('0.0') }
         it { expect(subject.to_b).to be false }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
 
       context "when value is positive" do
         subject { BigDecimal('1.0') }
         it { expect(subject.to_b).to be true }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
 
       context "when value is negative" do
         subject { BigDecimal('-1.0') }
         it { expect(subject.to_b).to be true }
+        it { expect(subject.to_boolean).to be subject.to_b }
+        it { expect(subject.to_bool).to be subject.to_b }        
       end
     end
   end

@@ -17,6 +17,16 @@ RSpec.describe WannabeBool::String do
           subject { value.to_b }
           it { is_expected.to be true }
         end
+
+        context "using aliasing when string is '#{value}'" do
+          it 'should return the same value as .to_b' do
+            expect(value.to_boolean).to eq value.to_b
+          end
+
+          it 'should return the same value as .to_b' do
+            expect(value.to_b).to eq value.to_b
+          end
+        end      
       end
     end
 
@@ -37,6 +47,16 @@ RSpec.describe WannabeBool::String do
           subject { value.to_b }
           it { is_expected.to be false }
         end
+
+        context "using aliasing when string is '#{value}'" do
+          it 'should return the same value as .to_b' do
+            expect(value.to_boolean).to eq value.to_b
+          end
+
+          it 'should return the same value as .to_b' do
+            expect(value.to_b).to eq value.to_b
+          end
+        end        
       end
     end
 
@@ -58,6 +78,16 @@ RSpec.describe WannabeBool::String do
           context "when string is '#{value}'" do
             it 'returns the result of the given behaviour' do
               expect(value.to_b).to be :wherever
+            end
+          end
+
+          context "using aliasing when string is '#{value}'" do
+            it 'should return the same value as .to_b' do
+              expect(value.to_boolean).to eq value.to_b
+            end
+
+            it 'should return the same value as .to_b' do
+              expect(value.to_b).to eq value.to_b
             end
           end
         end
