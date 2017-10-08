@@ -26,7 +26,7 @@ RSpec.describe WannabeBool::Symbol do
       :n, :N,
       :no, :NO,
       :not, :NOT,
-      :wherever, :Prodis
+      :whatever, :Prodis
     ].each do |value|
       context "when symbol is '#{value}'" do
         subject { value }
