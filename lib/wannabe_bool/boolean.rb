@@ -3,8 +3,7 @@ module WannabeBool::Boolean
     self
   end
 
-  alias_method 'to_boolean', 'to_b'
-  alias_method 'to_bool', 'to_b'  
+  include WannabeBool::Aliasing
 end
 
 class TrueClass
