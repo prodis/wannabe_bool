@@ -31,7 +31,7 @@ RSpec.describe WannabeBool::Symbol do
         expect(value.to_b).to eq true
       end
     end
-
+    
     falsey_values.each do |value|
       it "should return false when symbol is '#{value}'" do
         expect(value.to_b).to eq false

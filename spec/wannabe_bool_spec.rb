@@ -13,7 +13,7 @@ RSpec.describe WannabeBool do
     describe '.invalid_value_behaviour=' do
       context 'when behaviour responds to call method' do
         let(:behaviour) do
-          -> { :wherever }
+          -> { :whatever }
         end
 
         before do
