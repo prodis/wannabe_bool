@@ -2,6 +2,9 @@ require 'bigdecimal'
 
 RSpec.describe WannabeBool::Numeric do
   context Integer do
+    positives = (1..9)
+    negatives = (-9..-1)
+    
     describe '#to_b' do
       context 'when value is 0' do
         subject { 0 }
@@ -9,7 +12,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'positive values' do
-        (1..9).each do |value|
+        positives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_b).to be true }
@@ -18,7 +21,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'negative values' do
-        (-9..-1).each do |value|
+        negatives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_b).to be true }
@@ -34,7 +37,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'positive values' do
-        (1..9).each do |value|
+        positives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_bool).to be true }
@@ -43,7 +46,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'negative values' do
-        (-9..-1).each do |value|
+        negatives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_bool).to be true }
@@ -59,7 +62,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'positive values' do
-        (1..9).each do |value|
+        positives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_boolean).to be true }
@@ -68,7 +71,7 @@ RSpec.describe WannabeBool::Numeric do
       end
 
       context 'negative values' do
-        (-9..-1).each do |value|
+        negatives.each do |value|
           context "when value is #{value}" do
             subject { value }
             it { expect(subject.to_boolean).to be true }

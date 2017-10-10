@@ -5,4 +5,8 @@ module WannabeBool::Aliasing
       alias_method :to_boolean, :to_b
     end
   end
+
+  def to_b
+    raise NotImplementedError
+  end
 end
