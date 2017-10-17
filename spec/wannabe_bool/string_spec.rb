@@ -61,13 +61,13 @@ RSpec.describe WannabeBool::String do
 
       context 'when an invalid value behaviour is given' do
         before do
-          WannabeBool.invalid_value_behaviour = -> { :wherever }
+          WannabeBool.invalid_value_behaviour = -> { :whatever }
         end
 
         self::INVALID_VALUES.each do |value|
           context "when string is '#{value}'" do
             it 'returns the result of the given behaviour' do
-              expect(value.to_b).to be :wherever
+              expect(value.to_b).to be :whatever
             end
           end
         end
