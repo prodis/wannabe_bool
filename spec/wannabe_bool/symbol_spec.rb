@@ -1,5 +1,6 @@
 RSpec.describe WannabeBool::Symbol do
-  truthy_values = [ 
+  # use self:: to make the constant only available to this spec class
+  self::TRUTHY_VALUES = [ 
     :'1', :'1 ', :' 1 ', :' 1',
     :t, :'t ', :' t', :' t ',
     :T, :'T ', :' T', :' T ',
@@ -11,9 +12,9 @@ RSpec.describe WannabeBool::Symbol do
     :Y, :'Y ', :' Y', :' Y ',
     :yes, :'yes ', :' yes', :' yes ',
     :YES, :'YES ', :' YES', :' YES '
-  ]
+  ].freeze
 
-  falsey_values = [
+  self::FALSEY_VALUES = [
     :'',
     :'0', :'2', :'-1', :'-2',
     :f, :F,
@@ -23,16 +24,16 @@ RSpec.describe WannabeBool::Symbol do
     :no, :NO,
     :not, :NOT,
     :wherever, :Prodis
-  ]
+  ].freeze
 
   describe '#to_b' do
-    truthy_values.each do |value|
+    self::TRUTHY_VALUES.each do |value|
       it "should return true when symbol is '#{value}'" do
         expect(value.to_b).to eq true
       end
     end
 
-    falsey_values.each do |value|
+    self::FALSEY_VALUES.each do |value|
       it "should return false when symbol is '#{value}'" do
         expect(value.to_b).to eq false
       end
@@ -40,13 +41,13 @@ RSpec.describe WannabeBool::Symbol do
   end
 
   describe '#to_bool' do
-    truthy_values.each do |value|
+    self::TRUTHY_VALUES.each do |value|
       it "should return true when symbol is '#{value}'" do
         expect(value.to_bool).to eq true
       end
     end
 
-    falsey_values.each do |value|
+    self::FALSEY_VALUES.each do |value|
       it "should return false when symbol is '#{value}'" do
         expect(value.to_bool).to eq false
       end
@@ -54,13 +55,13 @@ RSpec.describe WannabeBool::Symbol do
   end
 
   describe '#to_boolean' do
-    truthy_values.each do |value|
+    self::TRUTHY_VALUES.each do |value|
       it "should return true when symbol is '#{value}'" do
         expect(value.to_boolean).to eq true
       end
     end
 
-    falsey_values.each do |value|
+    self::FALSEY_VALUES.each do |value|
       it "should return false when symbol is '#{value}'" do
         expect(value.to_boolean).to eq false
       end
