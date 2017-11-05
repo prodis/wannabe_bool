@@ -2,6 +2,8 @@ module WannabeBool::Boolean
   def to_b
     self
   end
+
+  include WannabeBool::Aliasing
 end
 
 class TrueClass

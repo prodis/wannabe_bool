@@ -2,6 +2,8 @@ module WannabeBool::Numeric
   def to_b
     !self.zero?
   end
+
+  include WannabeBool::Aliasing
 end
 
 class Numeric
