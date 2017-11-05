@@ -19,7 +19,8 @@ Gem::Specification.new do |spec|
 
   spec.platform = Gem::Platform::RUBY
 
-  spec.add_development_dependency 'coveralls'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec', '~> 3.6'
+  spec.add_development_dependency 'coveralls', '~> 0.8.21'
+  spec.add_development_dependency 'pry', '~> 0.11.2'
+  spec.add_development_dependency 'rake', '~> 12.2', '>= 12.2.1'
+  spec.add_development_dependency 'rspec', '~> 3.7'
 end
