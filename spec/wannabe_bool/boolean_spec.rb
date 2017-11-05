@@ -7,11 +7,11 @@ RSpec.describe WannabeBool::Boolean do
     end
 
     describe '#to_bool' do
-      it { expect(subject.to_bool).to be true }      
+      it { expect(subject.to_bool).to be true }
     end
 
     describe '#to_boolean' do
-      it { expect(subject.to_boolean).to be true }      
+      it { expect(subject.to_boolean).to be true }
     end
   end
 
@@ -23,11 +23,11 @@ RSpec.describe WannabeBool::Boolean do
     end
 
     describe '#to_bool' do
-      it { expect(subject.to_bool).to be false }      
+      it { expect(subject.to_bool).to be false }
     end
 
     describe '#to_boolean' do
-      it { expect(subject.to_boolean).to be false }      
-    end    
+      it { expect(subject.to_boolean).to be false }
+    end
   end
 end

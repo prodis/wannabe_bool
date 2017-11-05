@@ -12,6 +12,6 @@ RSpec.describe WannabeBool::Nil do
 
     describe '#to_boolean' do
       it { expect(subject.to_boolean).to be false }
-    end    
+    end
   end
 end

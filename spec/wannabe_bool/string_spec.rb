@@ -1,6 +1,6 @@
 RSpec.describe WannabeBool::String do
   # use self:: to make the constant only available to this spec class
-  self::TRUTHY_VALUES = [ 
+  self::TRUTHY_VALUES = [
     '1', '1 ', ' 1', ' 1 ',
     't', 't ', ' t', ' t ',
     'T', 'T ', ' T', ' T ',
@@ -28,7 +28,7 @@ RSpec.describe WannabeBool::String do
     'NO', 'NO ', ' NO', ' NO '
   ].freeze
 
-  self::INVALID_VALUES = [ 
+  self::INVALID_VALUES = [
     '', 'nil',
     '2', '-1', '-2',
     'not', 'NOT',
@@ -41,7 +41,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_b }
           it { is_expected.to be true }
-        end    
+        end
       end
     end
 
@@ -50,7 +50,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_b }
           it { is_expected.to be false }
-        end      
+        end
       end
     end
 
@@ -81,7 +81,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_bool }
           it { is_expected.to be true }
-        end    
+        end
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_bool }
           it { is_expected.to be false }
-        end      
+        end
       end
     end
 
@@ -121,7 +121,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_boolean }
           it { is_expected.to be true }
-        end    
+        end
       end
     end
 
@@ -130,7 +130,7 @@ RSpec.describe WannabeBool::String do
         context "when string is '#{value}'" do
           subject { value.to_boolean }
           it { is_expected.to be false }
-        end      
+        end
       end
     end
 
@@ -153,5 +153,5 @@ RSpec.describe WannabeBool::String do
         end
       end
     end
-  end   
+  end
 end

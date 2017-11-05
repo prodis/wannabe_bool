@@ -11,7 +11,7 @@ RSpec.describe WannabeBool::Numeric do
   DECIMAL_POSITIVES = BigDecimal('1.0').freeze
   DECIMAL_NEGATIVES = BigDecimal('-1.0').freeze
 
-  context Integer do  
+  context Integer do
     describe '#to_b' do
       context 'when value is 0' do
         subject { ZERO }
@@ -85,7 +85,7 @@ RSpec.describe WannabeBool::Numeric do
           end
         end
       end
-    end    
+    end
   end
 
   context Float do
@@ -191,6 +191,6 @@ RSpec.describe WannabeBool::Numeric do
         subject { DECIMAL_NEGATIVES }
         it { expect(subject.to_boolean).to be true }
       end
-    end    
+    end
   end
 end

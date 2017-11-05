@@ -1,6 +1,6 @@
 RSpec.describe WannabeBool::Symbol do
   # use self:: to make the constant only available to this spec class
-  self::TRUTHY_VALUES = [ 
+  self::TRUTHY_VALUES = [
     :'1', :'1 ', :' 1 ', :' 1',
     :t, :'t ', :' t', :' t ',
     :T, :'T ', :' T', :' T ',
@@ -66,5 +66,5 @@ RSpec.describe WannabeBool::Symbol do
         expect(value.to_boolean).to eq false
       end
     end
-  end  
+  end
 end

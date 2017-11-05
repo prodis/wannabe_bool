@@ -1,7 +1,7 @@
 RSpec.describe WannabeBool::Aliasing do
   let(:anonymous_class) { Class.new { include WannabeBool::Aliasing } }
 
-  # When there is no to_b method on the parent class, 
+  # When there is no to_b method on the parent class,
   # this module should raise NotImplementedError for all the three methods
   describe '#to_b' do
     it 'should raise NotImplementedError' do

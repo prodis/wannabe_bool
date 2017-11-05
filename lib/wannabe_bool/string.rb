@@ -9,7 +9,7 @@ module WannabeBool::String
 
     WannabeBool.invalid_value_behaviour.call
   end
-  
+
   include WannabeBool::Aliasing
 end
 
