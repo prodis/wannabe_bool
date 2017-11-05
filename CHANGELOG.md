@@ -1,5 +1,6 @@
 | Version | Changes |
 | ------- | ------- |
+| 0.7.0   | Aliases `to_bool` and `to_boolean` for `to_b` method. [Issue #9](https://github.com/prodis/wannabe_bool/issues/9). |
 | 0.6.0   | Invalid value behaviours. [Issue #5](https://github.com/prodis/wannabe_bool/issues/5). |
 | 0.5.0   | No Ruby version required. |
 | 0.4.0   | `to_b` in `Numeric` class, not only in `Integer` class. |
