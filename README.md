@@ -27,6 +27,29 @@ $ gem install wannabe_bool
 
 `to_b` method is available on `String`, `Symbol`, `Numeric`, `TrueClass`, `FalseClass` and `NilClass`.
 
+For sake of readability (and personal choice), `to_b` has two aliases:
+- `to_bool`
+- `to_boolean`
+
+Given this example:
+```ruby
+{
+  one: 'value',
+  two: 2,
+  mobile?: params[:mobile].to_b
+}
+```
+
+It could be "more readable" like this:
+```ruby
+{
+  one: 'value',
+  two: 2,
+  mobile?: params[:mobile].to_boolean
+}
+```
+
+Don't forget to require the gem:
 ```ruby
 require 'wannabe_bool'
 ```
@@ -90,7 +113,7 @@ It ignores trailing spaces and letter cases.
 ''.to_b  # => false
 ' '.to_b # => false
 ```
-#### Invalid Value Behaviour
+#### Invalid Value Behaviour for strings
 You can configure the result for invalid boolean string representations, using the `WannabeBool.invalid_value_behaviour` option.
 
 There are 3 predefined behaviours available: to return `false` (default), `nil` or raise an `ArgumentError`:
@@ -106,14 +129,14 @@ WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::Error
 'wherever'.to_b # => ArgumentError: is not a valid boolean representation
 ```
 
-Moreover you can provide your own behaviour for invalid boolean string representations. Just set a proc or lambda, or even any class or object that responds to `call` method.
+Moreover, you can provide your own behaviour for invalid boolean string representations. Just set a proc or lambda, or even any class or object that responds to `call` method.
 
 ```ruby
 WannabeBool.invalid_value_behaviour = -> { :prodis }
 'wherever'.to_b # => :prodis
 ```
 
-Note that `WannabeBool.invalid_value_behaviour` is a global configuration, so all results for `to_b` method with invalid boolean string representations will be affected.
+Note that `WannabeBool.invalid_value_behaviour` is a global configuration. Said that, all the results for `to_b` method with invalid boolean string representations will be affected.
 
 ### Symbol
 Same as `symbol.to_s.to_b`.
