@@ -1,23 +1,28 @@
 RSpec.describe WannabeBool::Aliasing do
-  let(:anonymous_class) { Class.new { include WannabeBool::Aliasing } }
-
-  # When there is no to_b method on the parent class,
-  # this module should raise NotImplementedError for all the three methods
-  describe '#to_b' do
-    it 'should raise NotImplementedError' do
-      expect{ anonymous_class.new.to_b }.to raise_error(NotImplementedError)
-    end
+  class FakeAliasing
+    # Fake class does not implement #to_b method.
+    include WannabeBool::Aliasing
   end
 
-  describe '#to_bool' do
-    it 'should raise NotImplementedError' do
-      expect{ anonymous_class.new.to_bool }.to raise_error(NotImplementedError)
-    end
-  end
+  context 'when #to_b is not available in included class' do
+    subject { FakeAliasing.new }
 
-  describe '#to_boolean' do
-    it 'should raise NotImplementedError' do
-      expect{ anonymous_class.new.to_boolean }.to raise_error(NotImplementedError)
+    describe '#to_b' do
+      it 'raises NotImplementedError' do
+        expect { subject.to_b }.to raise_error(NotImplementedError)
+      end
+    end
+
+    describe '#to_bool' do
+      it 'raises NotImplementedError' do
+        expect { subject.to_bool }.to raise_error(NotImplementedError)
+      end
+    end
+
+    describe '#to_boolean' do
+      it 'raises NotImplementedError' do
+        expect { subject.to_boolean }.to raise_error(NotImplementedError)
+      end
     end
   end
 end

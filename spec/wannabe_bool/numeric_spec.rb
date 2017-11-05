@@ -1,15 +1,16 @@
 require 'bigdecimal'
 
 RSpec.describe WannabeBool::Numeric do
-  ZERO = 0.freeze
+  # TODO: We don't need constants here, let variables inside the contexts are enough.
+  ZERO = 0
   INTEGER_POSITIVES = (1..9).freeze
   INTEGER_NEGATIVES = (-9..-1).freeze
-  FLOAT_ZERO = (0.0).freeze
-  FLOAT_POSITIVES = (Random.rand).freeze
-  FLOAT_NEGATIVES = (Random.rand * -1).freeze
-  DECIMAL_ZERO = BigDecimal('0.0').freeze
-  DECIMAL_POSITIVES = BigDecimal('1.0').freeze
-  DECIMAL_NEGATIVES = BigDecimal('-1.0').freeze
+  FLOAT_ZERO = 0.0
+  FLOAT_POSITIVES = Random.rand
+  FLOAT_NEGATIVES = Random.rand * -1
+  DECIMAL_ZERO = BigDecimal('0.0')
+  DECIMAL_POSITIVES = BigDecimal('1.0')
+  DECIMAL_NEGATIVES = BigDecimal('-1.0')
 
   context Integer do
     describe '#to_b' do

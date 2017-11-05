@@ -30,7 +30,7 @@ RSpec.describe WannabeBool do
       end
 
       context 'when behaviour does not respond to call method' do
-        it 'raises argument error' do
+        it 'raises ArgumentError' do
           expect { subject.invalid_value_behaviour = String }.to raise_error(ArgumentError, 'behaviour does not respond to call method')
         end
       end
