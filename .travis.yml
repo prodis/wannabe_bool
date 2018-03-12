@@ -3,9 +3,11 @@ language: ruby
 rvm:
   - 2.0.0
   - 2.1.10
-  - 2.2.8
-  - 2.3.5
-  - 2.4.2
+  - 2.2.9
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
+  - 2.6
   - ruby-head
   - jruby
   - jruby-9
@@ -25,6 +27,7 @@ matrix:
     - rvm: rbx
     - rvm: rbx-2
     - rvm: rbx-3
+    - rvm: 2.6
   fast_finish: true
 
 script: bundle exec rspec
