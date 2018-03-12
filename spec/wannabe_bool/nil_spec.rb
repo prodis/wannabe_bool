@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool::Nil do
   context NilClass do
     subject { nil }

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module WannabeBool::Aliasing
   def self.included(base)
     base.send(:alias_method, :to_bool, :to_b)

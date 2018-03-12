@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module WannabeBool; end
 
 require 'wannabe_bool/invalid_value_behaviour'

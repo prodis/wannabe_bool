@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module WannabeBool::String
   TRUES  = %W{t true on y yes 1}.freeze
   FALSES = %W{f false off n no 0}.freeze
