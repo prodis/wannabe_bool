@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool::Aliasing do
   class FakeAliasing
     # Fake class does not implement #to_b method.

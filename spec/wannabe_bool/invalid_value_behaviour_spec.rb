@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool::InvalidValueBehaviour do
   context 'False' do
     describe '#call' do

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module WannabeBool::InvalidValueBehaviour
   module False
     def self.call

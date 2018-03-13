@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool::Attributes do
   class FakeAttributes
     include WannabeBool::Attributes

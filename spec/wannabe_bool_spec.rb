@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool do
   context 'configuration' do
     subject { described_class }

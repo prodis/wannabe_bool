@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe WannabeBool::String do
   # use self:: to make the constant only available to this spec class
   self::TRUTHY_VALUES = [
