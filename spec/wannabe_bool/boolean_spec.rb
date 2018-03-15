@@ -14,6 +14,14 @@ RSpec.describe WannabeBool::Boolean do
     describe '#to_boolean' do
       it { expect(subject.to_boolean).to be true }
     end
+
+    describe '#true?' do
+      it { expect(subject.true?).to be true }
+    end
+
+    describe '#false?' do
+      it { expect(subject.false?).to be false }
+    end
   end
 
   context FalseClass do
@@ -29,6 +37,14 @@ RSpec.describe WannabeBool::Boolean do
 
     describe '#to_boolean' do
       it { expect(subject.to_boolean).to be false }
+    end
+
+    describe '#true?' do
+      it { expect(subject.true?).to be false }
+    end
+
+    describe '#false?' do
+      it { expect(subject.false?).to be true }
     end
   end
 end

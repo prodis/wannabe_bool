@@ -74,4 +74,36 @@ RSpec.describe WannabeBool::Symbol do
       end
     end
   end
+
+  describe '#true?' do
+    SYMBOL_TRUTHY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.true? }
+        it { is_expected.to be true }
+      end
+    end
+
+    SYMBOL_FALSEY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.true? }
+        it { is_expected.to be false }
+      end
+    end
+  end
+
+  describe '#false?' do
+    SYMBOL_TRUTHY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.false? }
+        it { is_expected.to be false }
+      end
+    end
+
+    SYMBOL_FALSEY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.false? }
+        it { is_expected.to be true }
+      end
+    end
+  end
 end

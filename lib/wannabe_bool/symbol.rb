@@ -5,6 +5,7 @@ module WannabeBool::Symbol
   end
 
   include WannabeBool::Aliasing
+  include WannabeBool::PredicateMethods
 end
 
 class Symbol

@@ -92,6 +92,56 @@ RSpec.describe WannabeBool::Numeric do
         end
       end
     end
+
+    describe '#true?' do
+      context 'when value is 0' do
+        subject { INTEGER_ZERO.true? }
+        it { is_expected.to be false }
+      end
+
+      context 'positive values' do
+        INTEGER_POSITIVES.each do |value|
+          context "when value is #{value}" do
+            subject { value.true? }
+            it { is_expected.to be true }
+          end
+        end
+      end
+
+      context 'negative values' do
+        INTEGER_NEGATIVES.each do |value|
+          context "when value is #{value}" do
+            subject { value.true? }
+            it { is_expected.to be true }
+          end
+        end
+      end
+    end
+
+    describe '#false?' do
+      context 'when value is 0' do
+        subject { INTEGER_ZERO.false? }
+        it { is_expected.to be true }
+      end
+
+      context 'positive values' do
+        INTEGER_POSITIVES.each do |value|
+          context "when value is #{value}" do
+            subject { value.false? }
+            it { is_expected.to be false }
+          end
+        end
+      end
+
+      context 'negative values' do
+        INTEGER_NEGATIVES.each do |value|
+          context "when value is #{value}" do
+            subject { value.false? }
+            it { is_expected.to be false }
+          end
+        end
+      end
+    end
   end
 
   context Float do
@@ -145,6 +195,40 @@ RSpec.describe WannabeBool::Numeric do
         it { is_expected.to be true }
       end
     end
+
+    describe '#true?' do
+      context 'when value is 0.0' do
+        subject { FLOAT_ZERO.true? }
+        it { is_expected.to be false }
+      end
+
+      context "when value is positive" do
+        subject { FLOAT_POSITIVE.true? }
+        it { is_expected.to be true }
+      end
+
+      context "when value is negative" do
+        subject { FLOAT_NEGATIVE.true? }
+        it { is_expected.to be true }
+      end
+    end
+
+    describe '#false?' do
+      context 'when value is 0.0' do
+        subject { FLOAT_ZERO.false? }
+        it { is_expected.to be true }
+      end
+
+      context "when value is positive" do
+        subject { FLOAT_POSITIVE.false? }
+        it { is_expected.to be false }
+      end
+
+      context "when value is negative" do
+        subject { FLOAT_NEGATIVE.false? }
+        it { is_expected.to be false }
+      end
+    end
   end
 
   context BigDecimal do
@@ -196,6 +280,40 @@ RSpec.describe WannabeBool::Numeric do
       context "when value is negative" do
         subject { DECIMAL_NEGATIVE.to_boolean }
         it { is_expected.to be true }
+      end
+    end
+
+    describe '#true?' do
+      context 'when value is 0.0' do
+        subject { DECIMAL_ZERO.true? }
+        it { is_expected.to be false }
+      end
+
+      context "when value is positive" do
+        subject { DECIMAL_POSITIVE.true? }
+        it { is_expected.to be true }
+      end
+
+      context "when value is negative" do
+        subject { DECIMAL_NEGATIVE.true? }
+        it { is_expected.to be true }
+      end
+    end
+
+    describe '#false?' do
+      context 'when value is 0.0' do
+        subject { DECIMAL_ZERO.false? }
+        it { is_expected.to be true }
+      end
+
+      context "when value is positive" do
+        subject { DECIMAL_POSITIVE.false? }
+        it { is_expected.to be false }
+      end
+
+      context "when value is negative" do
+        subject { DECIMAL_NEGATIVE.false? }
+        it { is_expected.to be false }
       end
     end
   end

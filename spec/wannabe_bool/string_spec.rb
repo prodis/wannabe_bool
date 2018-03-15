@@ -155,4 +155,86 @@ RSpec.describe WannabeBool::String do
       end
     end
   end
+
+  describe '#true?' do
+    context 'truthy values' do
+      STRING_TRUTHY_VALUES.each do |value|
+        context "when string is '#{value}'" do
+          subject { value.true? }
+          it { is_expected.to be true }
+        end
+      end
+    end
+
+    context 'falsey values' do
+      STRING_FALSEY_VALUES.each do |value|
+        context "when string is '#{value}'" do
+          subject { value.true? }
+          it { is_expected.to be false }
+        end
+      end
+    end
+
+    # TODO: Find a good sense behaviour/solution
+    context 'invalid values' do
+      after do
+        WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
+      end
+
+      context 'when an invalid value behaviour is given' do
+        before do
+          WannabeBool.invalid_value_behaviour = -> { :wherever }
+        end
+
+        STRING_INVALID_VALUES.each do |value|
+          context "when string is '#{value}'" do
+            it 'returns the result of the given behaviour' do
+              expect(value.true?).to be :wherever
+            end
+          end
+        end
+      end
+    end
+  end
+
+  describe '#false?' do
+    context 'truthy values' do
+      STRING_TRUTHY_VALUES.each do |value|
+        context "when string is '#{value}'" do
+          subject { value.false? }
+          it { is_expected.to be false }
+        end
+      end
+    end
+
+    context 'falsey values' do
+      STRING_FALSEY_VALUES.each do |value|
+        context "when string is '#{value}'" do
+          subject { value.false? }
+          it { is_expected.to be true }
+        end
+      end
+    end
+
+    # TODO: Find a good sense behaviour/solution
+    context 'invalid values' do
+      after do
+        WannabeBool.invalid_value_behaviour = WannabeBool::InvalidValueBehaviour::False
+      end
+
+      context 'when an invalid value behaviour is given' do
+        before do
+          WannabeBool.invalid_value_behaviour = -> { :wherever }
+        end
+
+        STRING_INVALID_VALUES.each do |value|
+          context "when string is '#{value}'" do
+            it 'returns the result of the given behaviour' do
+              expect(value.false?).to be :wherever
+            end
+          end
+        end
+      end
+    end
+  end
 end
