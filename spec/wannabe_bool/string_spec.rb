@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 RSpec.describe WannabeBool::String do
-  # use self:: to make the constant only available to this spec class
-  self::TRUTHY_VALUES = [
+
+  STRING_TRUTHY_VALUES = [
     '1', '1 ', ' 1', ' 1 ',
     't', 't ', ' t', ' t ',
     'T', 'T ', ' T', ' T ',
@@ -15,7 +15,7 @@ RSpec.describe WannabeBool::String do
     'YES', 'YES ', ' YES', ' YES '
   ].freeze
 
-  self::FALSEY_VALUES = [
+  STRING_FALSEY_VALUES = [
     '0', '0 ', ' 0', ' 0 ',
     'f', 'f ', ' f', ' f ',
     'F', 'F ', ' F', ' F ',
@@ -29,7 +29,7 @@ RSpec.describe WannabeBool::String do
     'NO', 'NO ', ' NO', ' NO '
   ].freeze
 
-  self::INVALID_VALUES = [
+  STRING_INVALID_VALUES = [
     '', 'nil',
     '2', '-1', '-2',
     'not', 'NOT',
@@ -38,7 +38,7 @@ RSpec.describe WannabeBool::String do
 
   describe '#to_b' do
     context 'truthy values' do
-      self::TRUTHY_VALUES.each do |value|
+      STRING_TRUTHY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_b }
           it { is_expected.to be true }
@@ -47,7 +47,7 @@ RSpec.describe WannabeBool::String do
     end
 
     context 'falsey values' do
-      self::FALSEY_VALUES.each do |value|
+      STRING_FALSEY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_b }
           it { is_expected.to be false }
@@ -65,7 +65,7 @@ RSpec.describe WannabeBool::String do
           WannabeBool.invalid_value_behaviour = -> { :whatever }
         end
 
-        self::INVALID_VALUES.each do |value|
+        STRING_INVALID_VALUES.each do |value|
           context "when string is '#{value}'" do
             it 'returns the result of the given behaviour' do
               expect(value.to_b).to be :whatever
@@ -78,7 +78,7 @@ RSpec.describe WannabeBool::String do
 
   describe '#to_bool' do
     context 'truthy values' do
-      self::TRUTHY_VALUES.each do |value|
+      STRING_TRUTHY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_bool }
           it { is_expected.to be true }
@@ -87,7 +87,7 @@ RSpec.describe WannabeBool::String do
     end
 
     context 'falsey values' do
-      self::FALSEY_VALUES.each do |value|
+      STRING_FALSEY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_bool }
           it { is_expected.to be false }
@@ -105,7 +105,7 @@ RSpec.describe WannabeBool::String do
           WannabeBool.invalid_value_behaviour = -> { :wherever }
         end
 
-        self::INVALID_VALUES.each do |value|
+        STRING_INVALID_VALUES.each do |value|
           context "when string is '#{value}'" do
             it 'returns the result of the given behaviour' do
               expect(value.to_bool).to be :wherever
@@ -118,7 +118,7 @@ RSpec.describe WannabeBool::String do
 
   describe '#to_boolean' do
     context 'truthy values' do
-      self::TRUTHY_VALUES.each do |value|
+      STRING_TRUTHY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_boolean }
           it { is_expected.to be true }
@@ -127,7 +127,7 @@ RSpec.describe WannabeBool::String do
     end
 
     context 'falsey values' do
-      self::FALSEY_VALUES.each do |value|
+      STRING_FALSEY_VALUES.each do |value|
         context "when string is '#{value}'" do
           subject { value.to_boolean }
           it { is_expected.to be false }
@@ -145,7 +145,7 @@ RSpec.describe WannabeBool::String do
           WannabeBool.invalid_value_behaviour = -> { :wherever }
         end
 
-        self::INVALID_VALUES.each do |value|
+        STRING_INVALID_VALUES.each do |value|
           context "when string is '#{value}'" do
             it 'returns the result of the given behaviour' do
               expect(value.to_boolean).to be :wherever

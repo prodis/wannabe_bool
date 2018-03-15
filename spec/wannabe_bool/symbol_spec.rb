@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 RSpec.describe WannabeBool::Symbol do
-  # use self:: to make the constant only available to this spec class
-  self::TRUTHY_VALUES = [
+
+  SYMBOL_TRUTHY_VALUES = [
     :'1', :'1 ', :' 1 ', :' 1',
     :t, :'t ', :' t', :' t ',
     :T, :'T ', :' T', :' T ',
@@ -15,7 +15,7 @@ RSpec.describe WannabeBool::Symbol do
     :YES, :'YES ', :' YES', :' YES '
   ].freeze
 
-  self::FALSEY_VALUES = [
+  SYMBOL_FALSEY_VALUES = [
     :'',
     :'0', :'2', :'-1', :'-2',
     :f, :F,
@@ -28,43 +28,49 @@ RSpec.describe WannabeBool::Symbol do
   ].freeze
 
   describe '#to_b' do
-    self::TRUTHY_VALUES.each do |value|
-      it "should return true when symbol is '#{value}'" do
-        expect(value.to_b).to eq true
+    SYMBOL_TRUTHY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_b }
+        it { is_expected.to be true }
       end
     end
 
-    self::FALSEY_VALUES.each do |value|
-      it "should return false when symbol is '#{value}'" do
-        expect(value.to_b).to eq false
+    SYMBOL_FALSEY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_b }
+        it { is_expected.to be false }
       end
     end
   end
 
   describe '#to_bool' do
-    self::TRUTHY_VALUES.each do |value|
-      it "should return true when symbol is '#{value}'" do
-        expect(value.to_bool).to eq true
+    SYMBOL_TRUTHY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_bool }
+        it { is_expected.to be true }
       end
     end
 
-    self::FALSEY_VALUES.each do |value|
-      it "should return false when symbol is '#{value}'" do
-        expect(value.to_bool).to eq false
+    SYMBOL_FALSEY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_bool }
+        it { is_expected.to be false }
       end
     end
   end
 
   describe '#to_boolean' do
-    self::TRUTHY_VALUES.each do |value|
-      it "should return true when symbol is '#{value}'" do
-        expect(value.to_boolean).to eq true
+    SYMBOL_TRUTHY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_boolean }
+        it { is_expected.to be true }
       end
     end
 
-    self::FALSEY_VALUES.each do |value|
-      it "should return false when symbol is '#{value}'" do
-        expect(value.to_boolean).to eq false
+    SYMBOL_FALSEY_VALUES.each do |value|
+      context "when symbol is '#{value}'" do
+        subject { value.to_bool }
+        it { is_expected.to be false }
       end
     end
   end
