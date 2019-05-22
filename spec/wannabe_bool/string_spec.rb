@@ -12,7 +12,7 @@ RSpec.describe WannabeBool::String do
     'y', 'y ', ' y', ' y ',
     'Y', 'Y ', ' Y', ' Y ',
     'yes', 'yes ', ' yes', ' yes ',
-    'YES', 'YES ', ' YES', ' YES '
+    'YES', 'YES ', ' YES', ' YES ', 'sim', 'SIM'
   ].freeze
 
   self::FALSEY_VALUES = [
@@ -26,7 +26,8 @@ RSpec.describe WannabeBool::String do
     'n', 'n ', ' n', ' n ',
     'N', 'N ', ' N', ' N ',
     'no', 'no ', ' no', ' no ',
-    'NO', 'NO ', ' NO', ' NO '
+    'NO', 'NO ', ' NO', ' NO ', 
+    'nao', 'NAO', 'não', 'NÃO'
   ].freeze
 
   self::INVALID_VALUES = [
