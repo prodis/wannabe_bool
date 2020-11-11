@@ -4,4 +4,9 @@ require 'bundler/setup'
 require 'wannabe_bool'
 
 require 'pry'
-Pry.start
+if defined?(Pry)
+  Pry.start 
+else
+  require 'irb'
+  IRB.start
+end
